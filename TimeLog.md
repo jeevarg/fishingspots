@@ -26,6 +26,6 @@
 | 9/22/2020| Finished week 3 exercise with captcha sum and 100% code coverage and started working on indie project | 4  | |
 | 9/23/2020| Worked on indie project user stories, desing screens, timelog, project plan, and problem statement | 5 | |
 | 9/23/2020| Changed the layout of the spots screen by adding options for editing and deleting a spot | 2 | |
-| 9/24/2020| Added screen to add a spot by entering coordinates of a map and updated timeLog.md file | 3 | |
+| 9/24/2020| Added a background image to the home page. Added screen to add a spot by entering coordinates of a map. Updated timeLog.md and also added applicationFlow.md file | 5 | |
 
 

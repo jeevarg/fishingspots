@@ -36,8 +36,13 @@ FishingSpots website allows Users to browse the website for all the spots as a g
 
 
 ### Design
-TODO
+
+* [User Stories](DesignDocuments/userStories.md)
+* [Screen Design](DesignDocuments/Screens.odg)
+* [Application Flow](DesignDocuments/applicationFlow.md)
+
+
 ### [Project Plan](ProjectPlan.md)
-TODO
+
 ### [Weekly Refelection](WeeklyReflection.md)
-TODO
+
