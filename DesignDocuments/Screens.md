@@ -6,31 +6,31 @@
 
 ### Spots Page
 
-![Spots Page](DesignDocuments/2-spots.png)
+![Spots Page](2-spots.png)
 
 ### Add New Spot Page
 
-![Add New Spot](DesignDocuments/3-spotAdd.png)
+![Add New Spot](3-spotAdd.png)
 
 ### Edit Spot Page
 
-![Edit a Spot](DesignDocuments/4-spotEdit.png)
+![Edit a Spot](4-spotEdit.png)
 
 ### Delete Spot Page
 
-![Delete a Spot](DesignDocuments/5-spotDelete.png)
+![Delete a Spot](5-spotDelete.png)
 
 ### Dialog for Sign In
 
-![Sign in Dialog](DesignDocuments/6-signIn.png)
+![Sign in Dialog](6-signIn.png)
 
 ### Dialog for Sign Up
 
-![Sign up Dialog](DesignDocuments/7-signUp.png)
+![Sign up Dialog](7-signUp.png)
 
 ### About Page
 
-![About Page](DesignDocuments/8-about.png)
+![About Page](8-about.png)
 
 
 
