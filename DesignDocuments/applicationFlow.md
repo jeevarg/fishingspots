@@ -4,8 +4,7 @@
 
 - User can select continue as a guest, which takes him to the Spots page. 
 - User can then enter the search criteria to view the spots on the map. 
-is signed in already).
-- Rest of the steps are the same as carried out to View Spots.
+- Rest of the steps are the same as carried out in the "View Spots" section.
 
 ### User Sign up
 
@@ -28,7 +27,7 @@ pages.
 
 ### View Spots
 
-- Page sends a request to view spots servlet along with criteria 
+- Page sends a request to view spots servlet along with the search criteria 
 (city, state, miles OR zipcode, miles).
 - Servlet uses the spots dao to select spots according to criteria
 - Dao performs select and creates spot objects from results.
@@ -61,7 +60,8 @@ pages.
 ### Delete Spot 
 
 - Option only available to logged in users.
-- User can only delete his/her spot(s). User selects their spot and click on delete button. 
+- User can only delete his/her spot(s). 
+- User selects their spot and clicks on delete button. 
 - Details are sent to Delete Spot  servlet
 - Servlet creates spot  object with the delete information.
 - Servlet sends object to dao
@@ -70,5 +70,5 @@ pages.
 
 ### About
 
-- Static page - html only? 
-- Consider making contact info configurable.
+- Page displays static HTML information regarding the FishingSpots website.
+

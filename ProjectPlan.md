@@ -8,13 +8,14 @@
 - [ ] Determine possible Web Services or APIs to use
 - [ ] Write project plan
 - [ ] Document application flow in text and pictures 
-- [ ] Triple-check for Checkpoint 1: Problem statement, project plan, screen design and time log pushed to GitHub. 
+- [ ] Triple-check for Checkpoint 1: Problem statement, project plan, screen 
+      design and time log pushed to GitHub. 
 
 ### Week 4
 
 - [ ] List technologies, versions and how they will be used
 - [ ] Weekly timelog entry
-- Implement the changes from the feedback from checkpoint 1
+- [ ] Implement the changes from the feedback from checkpoint 1
 - [ ] Set up logging
 - [ ] Added few more desing screens for spot-add, spot-edit and spot-delete. 
 - [ ] Finish projectPlan.md file.
@@ -39,7 +40,10 @@
 - [ ] Add the spot entity (test, dev and prod dbs)
 - [ ] Build the spot search jsp
 - [ ] Build the spot add/edit/delete jsp
-- [ ] Prepare for Checkpoint 2: Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J is implemented (no System.out.printlns), class design and any other diagrams you plan to use have been created. 
+- [ ] Prepare for Checkpoint 2: Database designed and created, at least one DAO 
+      implemented with Hibernate, DAO is unit tested, Log4J is implemented 
+      (no System.out.printlns), class design and any other diagrams you plan to 
+      use have been created. 
 
 ### Week 7
 
@@ -53,13 +57,16 @@
 
 - [ ] Weekly timeLog entry
 - [ ] Integration with google maps api
-- [ ] Spots.jsp page populated with spots and when clicked on a spot would pop up the rating and reviews for that sopt from the database.
-- [ ] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays data from the database is implemented. 
+- [ ] Spots.jsp page populated with spots and when clicked on a spot would pop 
+      up the rating and reviews for that sopt from the database.
+- [ ] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays 
+      data from the database is implemented. 
 
 ### Week 9
 - [ ] Weekly timeLog entry
 - [ ] Review and incorporate feedback from Checkpoint 3.
-- [ ] Carefully review code for standards and best practices - use a code quality tool? 
+- [ ] Carefully review code for standards and best practices - use a code 
+      quality tool? 
 
 ### Week 8
 - [ ] Weekly timeLog entry
