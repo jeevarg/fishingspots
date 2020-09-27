@@ -2,7 +2,7 @@
 
 ### Home Page
 
-![Home Page](DesignDocuments/1-home.png)
+![Home Page](/1-home.png)
 
 ### Spots Page
 
