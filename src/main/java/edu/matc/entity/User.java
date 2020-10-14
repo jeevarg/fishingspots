@@ -1,213 +1,127 @@
 package edu.matc.entity;
 
+
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
- * A class to represent a user.
- *
- * @author pwaite
+ * The type Author.
  */
 @Entity(name = "User")
 @Table(name = "user")
 public class User {
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "user_name")
-    private String userName;
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
     private int id;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
 
-    @Column(name = "date_of_birth")
-    private LocalDate dateOfBirth;
+    //@OneToMany(mappedBy = "userid", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    //private Set<Spot> spots = new HashSet<>();
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Order> orders = new HashSet<>();
-
-    /**
-     * Instantiates a new User.
-     */
     public User() {
+    //    this.id = id;
     }
 
-    /**
-     * Instantiates a new User.
-     *
-     * @param firstName   the first name
-     * @param lastName    the last name
-     * @param userName    the user name
-     * @param dateOfBirth the date of birth
-     */
-    public User(String firstName, String lastName, String userName, LocalDate dateOfBirth) {
+    public User(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
-        this.dateOfBirth = dateOfBirth;
+        this.email = email;
+        this.password = password;
+        //this.spots = spots;
     }
 
-    /**
-     * Gets first name.
-     *
-     * @return the first name
-     */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * Sets first name.
-     *
-     * @param firstName the first name
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    /**
-     * Gets last name.
-     *
-     * @return the last name
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
-    /**
-     * Sets last name.
-     *
-     * @param lastName the last name
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    /**
-     * Gets user name.
-     *
-     * @return the user name
-     */
-    public String getUserName() {
-        return userName;
-    }
-
-    /**
-     * Sets user name.
-     *
-     * @param userName the user name
-     */
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
     public int getId() {
         return id;
     }
 
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
     public void setId(int id) {
         this.id = id;
     }
 
-    /**
-     * Gets date of birth.
-     *
-     * @return the date of birth
-     */
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+    public String getFirstName() {
+        return firstName;
     }
 
-    /**
-     * Sets date of birth.
-     *
-     * @param dateOfBirth the date of birth
-     */
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    /**
-     * Gets age.
-     *
-     * @return the age
-     */
-    public int getAge() {
-
-        return (int)ChronoUnit.YEARS.between(dateOfBirth, LocalDate.now());
+    public String getLastName() {
+        return lastName;
     }
 
-    /**
-     * Gets orders.
-     *
-     * @return the orders
-     */
-    public Set<Order> getOrders() {
-        return orders;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    /**
-     * Sets orders.
-     *
-     * @param orders the orders
-     */
-    public void setOrders(Set<Order> orders) {
-        this.orders = orders;
+    public String getEmail() {
+        return email;
     }
 
-    /**
-     * Add order.
-     *
-     * @param order the order
-     */
-    public void addOrder(Order order) {
-        orders.add(order);
-        order.setUser(this);
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    /**
-     * Remove order.
-     *
-     * @param order the order
-     */
-    public void removeOrder(Order order) {
-        orders.remove(order);
-        order.setUser(null);
+    public String getPassword() {
+        return password;
     }
 
-    @Override
-    public String toString() {
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+/*    public Set<Spot> getSpots() {
+        return spots;
+    }
+
+    public void setSpots(Set<Spot> spots) {
+        this.spots = spots;
+    }
+*/
+
+  /*  public void addSpot(Spot spot) {
+        spots.add(spot);
+        spot.setUser(this);
+    }
+
+    public void removeSpot(Spot spot) {
+        spots.remove(spot);
+        spot.setUser(null);
+    }
+*/
+
+    @java.lang.Override
+    public java.lang.String toString() {
         return "User{" +
-                "firstName='" + firstName + '\'' +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", id=" + id +
-                ", dateOfBirth=" + dateOfBirth +
-                ", age=" + getAge() +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        User user = (User) object;
+        return id == user.id &&
+                java.util.Objects.equals(firstName, user.firstName) &&
+                java.util.Objects.equals(lastName, user.lastName) &&
+                java.util.Objects.equals(email, user.email) &&
+                java.util.Objects.equals(password, user.password);
+    }
 
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, email, password);
+    }
 }
+

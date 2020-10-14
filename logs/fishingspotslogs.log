@@ -1,0 +1,20 @@
+[DEBUG] 2020-10-14 12:53:17.177 [main] UserDao - Searching for user with lastName = Curry
+[DEBUG] 2020-10-14 12:53:17.653 [main] UserDao - Searching for user with lastName = c
+[DEBUG] 2020-10-14 12:53:17.906 [main] UserDao - Searching for: c
+[DEBUG] 2020-10-14 12:57:34.831 [main] UserDao - Searching for: c
+[DEBUG] 2020-10-14 13:02:15.931 [main] UserDao - Searching for: c
+[ERROR] 2020-10-14 13:17:42.100 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-14 13:17:42.590 [main] UserDaoTest - users size should be 3: 5
+[DEBUG] 2020-10-14 13:17:42.794 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-14 13:17:42.953 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-14 13:17:43.093 [main] UserDaoTest - inserted user: User{id=7, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-14 13:23:03.491 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-14 13:23:04.292 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-14 13:23:04.803 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-14 13:23:05.055 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-14 13:23:05.438 [main] UserDaoTest - inserted user: User{id=8, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-14 13:27:00.681 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-14 13:27:01.177 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-14 13:27:01.401 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-14 13:27:01.552 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-14 13:27:01.670 [main] UserDaoTest - inserted user: User{id=9, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}

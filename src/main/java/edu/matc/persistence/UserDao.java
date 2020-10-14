@@ -9,67 +9,35 @@ import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+/**
+ * The type User dao.
+ */
 public class UserDao {
-
     private final Logger logger = LogManager.getLogger(this.getClass());
+
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
     /**
-     * Gets all users.
+     * Get User by id
      *
-     * @return the all users
-     */
-    public List<User> getAllUsers() {
-
-        Session session = sessionFactory.openSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> query = builder.createQuery(User.class);
-        Root<User> root = query.from(User.class);
-        List<User> users = session.createQuery(query).getResultList();
-        session.close();
-        return users;
-    }
-
-    /**
-     * Gets all users by last name.
-     * @param lastName the last name to search by
-     * @return the all users
-     */
-    public List<User> getUsersByLastName(String lastName) {
-
-        logger.debug("Searching for: {}", lastName);
-
-        Session session = sessionFactory.openSession();
-
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> query = builder.createQuery(User.class);
-        Root<User> root = query.from(User.class);
-        Expression<String> propertyPath = root.get("lastName");
-        query.where(builder.like(propertyPath, "%" + lastName + "%"));
-        List<User> users = session.createQuery(query).getResultList();
-        session.close();
-        return users;
-    }
-
-    /**
-     * Gets a user by id
-     * @param id users id to search by
-     * @return a user
+     * @param id the id
+     * @return user by id
      */
     public User getById(int id) {
         Session session = sessionFactory.openSession();
-        User user = session.get(User.class, id);
+        User user = session.get( User.class, id );
         session.close();
         return user;
     }
 
+
     /**
-     * update user
-     * @param user  User to be inserted or updated
+     * update User
+     *
+     * @param user User to be inserted or updated
      */
     public void saveOrUpdate(User user) {
         Session session = sessionFactory.openSession();
@@ -80,9 +48,10 @@ public class UserDao {
     }
 
     /**
-     * update user
-     * @param user  User to be inserted or updated
-     * @return id of the inserted user
+     * insert User
+     *
+     * @param user User to be inserted
+     * @return the int
      */
     public int insert(User user) {
         int id = 0;
@@ -95,7 +64,8 @@ public class UserDao {
     }
 
     /**
-     * Delete a user
+     * Delete a User
+     *
      * @param user User to be deleted
      */
     public void delete(User user) {
@@ -108,52 +78,23 @@ public class UserDao {
 
 
     /**
-     * Get user by property (exact match)
-     * sample usage: getByPropertyEqual("lastName", "Curry")
+     * Return a list of all Users
      *
-     * @param propertyName entity property to search by
-     * @param value value of the property to search for
-     * @return list of users meeting the criteria search
+     * @return All Users
      */
-    public List<User> getByPropertyEqual(String propertyName, String value) {
+    public List<User> getAll() {
+
         Session session = sessionFactory.openSession();
 
-        logger.debug("Searching for user with " + propertyName + " = " + value);
-
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> query = builder.createQuery( User.class );
-        Root<User> root = query.from( User.class );
-        query.select(root).where(builder.equal(root.get(propertyName), value));
-        List<User> users = session.createQuery( query ).getResultList();
+        CriteriaQuery<User> query = builder.createQuery(User.class);
+        Root<User> root = query.from(User.class);
+        List<User> users = session.createQuery(query).getResultList();
 
+        logger.debug("The list of Users " + users);
         session.close();
+
         return users;
     }
-
-    /**
-     * Get user by property (like)
-     * sample usage: getByPropertyLike("lastName", "C")
-     *
-     * @param propertyName entity property to search by
-     * @param value value of the property to search for
-     * @return list of users meeting the criteria search
-     */
-    public List<User> getByPropertyLike(String propertyName, String value) {
-        Session session = sessionFactory.openSession();
-
-        logger.debug("Searching for user with {} = {}",  propertyName, value);
-
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> query = builder.createQuery( User.class );
-        Root<User> root = query.from( User.class );
-        Expression<String> propertyPath = root.get(propertyName);
-
-        query.where(builder.like(propertyPath, "%" + value + "%"));
-
-        List<User> users = session.createQuery( query ).getResultList();
-        session.close();
-        return users;
-    }
-
 
 }

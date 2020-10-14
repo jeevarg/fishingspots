@@ -25,11 +25,7 @@ public class SearchUsers extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         UserDao userDao = new UserDao();
-        if (req.getParameter("submit").equals("search")) {
-            req.setAttribute("users", userDao.getUsersByLastName(req.getParameter("searchTerm")));
-        } else {
-            req.setAttribute("users", userDao.getAllUsers());
-        }
+        req.setAttribute("users", userDao.getAll());
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
         dispatcher.forward(req, resp);
     }
