@@ -1,7 +1,7 @@
 package edu.matc.persistence;
 
 import edu.matc.entity.User;
-//import edu.matc.entity.Book;
+import edu.matc.entity.Spot;
 import edu.matc.test.util.Database;
 //import edu.matc.testUtils.Database;
 import org.apache.logging.log4j.LogManager;
@@ -17,6 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Class to carry out various tests on the dao methods.
+ *
+ * @author JeevaG
  */
 public class UserDaoTest {
 
@@ -69,27 +71,30 @@ public class UserDaoTest {
     }
 
     /**
-     * Verify successful insert of a User with a Book
+     * Verify successful insert of a User with a Spot
      */
- /*   @Test
-    void insertWithBookSuccess() {
+    @Test
+    void insertWithSpotSuccess() {
 
-        User newUser = new User("Sue", "Hamilton");
-        String bookTitle = "Freshwater Fishing";
-        String isbn = "978-1-62403-681-1";
-        int year = 2014;
-        Book book = new Book(bookTitle, isbn, year, newUser);
+        User newUser = new User("Sue", "Hamilton", "shamilton@gmail.com","secret7");
+        String spotName = "madison1";
+        String city = "madison";
+        String state = "WI";
+        String zipCode = "53703";
+        double lat = 43.066675;
+        double lon = -89.386825;
+        Spot spot = new Spot(spotName, city, state, zipCode, lat, lon, newUser);
 
-        newUser.addBook(book);
+        newUser.addSpot(spot);
 
         int id = genericDao.insert(newUser);
         assertNotEquals(0,id);
         User insertedUser = (User) genericDao.getById(id);
-        logger.info("inserted user with book: " + insertedUser + " // " + insertedUser.getBooks());
+        logger.info("inserted user with a spot: " + insertedUser + " // " + insertedUser.getSpots());
         assertEquals(newUser, insertedUser);
-        assertEquals(book.hashCode(), insertedUser.getBooks().hashCode());
-        assertEquals(1, insertedUser.getBooks().size());
-    } */
+        assertEquals(spot.hashCode(), insertedUser.getSpots().hashCode());
+        assertEquals(1, insertedUser.getSpots().size());
+    }
 
     /**
      * Verify successful update of a User

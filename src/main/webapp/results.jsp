@@ -13,6 +13,8 @@
         <th>User Name</th>
         <th>Email</th>
         <th>Password</th>
+        <th>Spots</th>
+
         </thead>
         <tbody>
 
@@ -23,7 +25,7 @@
             <td>${user.password}</td>
 
             <td>
-                <c:forEach var="spot" items="${spots}">
+                <c:forEach var="spot" items="${user.spots}">
                     ${spot.id} || ${spot.spotName} || ${spot.city} || ${spot.state} || ${spot.zipCode} || ${spot.lat} || ${spot.lon} <br/>
                 </c:forEach>
             </td>
@@ -37,7 +39,7 @@
                     <td>${user.email}</td>
                     <td>${user.password}</td>
                     <td>
-                        <c:forEach var="spot" items="${spots}">
+                        <c:forEach var="spot" items="${user.spots}">
                             ${spot.id} || ${spot.spotName} || ${spot.city} || ${spot.state} || ${spot.zipCode} || ${spot.lat} || ${spot.lon} <br/>
                         </c:forEach>
                     </td>

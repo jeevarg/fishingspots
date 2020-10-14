@@ -12,16 +12,17 @@ import java.io.IOException;
 
 
 /**
- * A simple servlet to welcome the user.
- * @author pwaite
+ * A Servlet to get all the users from the database.
+ *
+ * @author JeevaG
  */
-
 @WebServlet(
         urlPatterns = {"/searchUser"}
 )
 
 public class SearchUsers extends HttpServlet {
     @Override
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         UserDao userDao = new UserDao();

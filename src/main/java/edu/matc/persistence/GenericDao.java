@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * A generic DAO somewhat inspired by http://rodrigouchoa.wordpress.com
  *
+ * @author JeevaG
  */
 
 public class GenericDao<T> {

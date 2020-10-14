@@ -9,7 +9,9 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * The type Author.
+ * The type User.
+ *
+ * @author JeevaG
  */
 @Entity(name = "User")
 @Table(name = "user")
@@ -23,13 +25,24 @@ public class User {
     private String email;
     private String password;
 
-    //@OneToMany(mappedBy = "userid", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    //private Set<Spot> spots = new HashSet<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Spot> spots = new HashSet<>();
 
+    /**
+     * Instantiates a new User.
+     */
     public User() {
     //    this.id = id;
     }
 
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param email     the email
+     * @param password  the password
+     */
     public User(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -38,67 +51,137 @@ public class User {
         //this.spots = spots;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets first name.
+     *
+     * @return the first name
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets first name.
+     *
+     * @param firstName the first name
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Gets last name.
+     *
+     * @return the last name
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Sets last name.
+     *
+     * @param lastName the last name
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets email.
+     *
+     * @param email the email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
-/*    public Set<Spot> getSpots() {
+    /**
+     * Gets spots.
+     *
+     * @return the spots
+     */
+    public Set<Spot> getSpots() {
         return spots;
     }
 
+    /**
+     * Sets spots.
+     *
+     * @param spots the spots
+     */
     public void setSpots(Set<Spot> spots) {
         this.spots = spots;
     }
-*/
 
-  /*  public void addSpot(Spot spot) {
+
+    /**
+     * Add spot.
+     *
+     * @param spot the spot
+     */
+    public void addSpot(Spot spot) {
         spots.add(spot);
         spot.setUser(this);
     }
 
+    /**
+     * Remove spot.
+     *
+     * @param spot the spot
+     */
     public void removeSpot(Spot spot) {
         spots.remove(spot);
         spot.setUser(null);
     }
-*/
 
-    @java.lang.Override
+
+    @Override
     public java.lang.String toString() {
         return "User{" +
                 "id=" + id +
@@ -109,6 +192,7 @@ public class User {
                 '}';
     }
 
+    @Override
     public boolean equals(Object object) {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
@@ -120,6 +204,7 @@ public class User {
                 java.util.Objects.equals(password, user.password);
     }
 
+    @Override
     public int hashCode() {
         return Objects.hash(id, firstName, lastName, email, password);
     }
