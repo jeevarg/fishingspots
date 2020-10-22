@@ -242,3 +242,181 @@
 [INFO ] 2020-10-21 13:04:45.636 [main] UserDaoTest - new last name for user with id=2: Stevenson
 [INFO ] 2020-10-21 13:04:45.777 [main] UserDaoTest - inserted user: User{id=66, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
 [DEBUG] 2020-10-21 13:07:40.580 [http-nio-8080-exec-8] UserDao - The list of Users [User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}, User{id=2, firstName='Fred', lastName='Hensen', email='fhensen@hotmail.com', password='supersecret2'}, User{id=3, firstName='Barney', lastName='Curry', email='bcurry@msn.com', password='supersecret3'}, User{id=4, firstName='Karen', lastName='Mack', email='kmack@yahoo.com', password='supersecret4'}, User{id=5, firstName='Dianne', lastName='Klein', email='dklein@gmail.com', password='supersecret5'}, User{id=66, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}]
+[ERROR] 2020-10-21 15:52:20.114 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 15:52:22.784 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 15:52:24.979 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 15:52:26.710 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 15:52:28.158 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=60, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 15:52:29.840 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 15:52:31.189 [main] UserDaoTest - inserted user with a spot: User{id=67, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=61, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=67, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 15:52:33.110 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 15:52:34.076 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 15:52:35.497 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 15:52:36.346 [main] UserDaoTest - inserted user: User{id=68, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-21 16:49:19.275 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 16:49:19.984 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 16:49:20.321 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 16:49:20.979 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 16:49:21.424 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=62, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 16:49:21.681 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 16:49:21.989 [main] UserDaoTest - inserted user with a spot: User{id=69, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=63, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=69, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 16:49:22.209 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 16:49:22.395 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 16:49:22.712 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 16:49:22.853 [main] UserDaoTest - inserted user: User{id=70, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-21 16:53:11.885 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 16:53:12.639 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 16:53:12.999 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 16:53:13.209 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 16:53:13.449 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=64, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 16:53:13.786 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 16:53:13.965 [main] UserDaoTest - inserted user with a spot: User{id=71, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=65, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=71, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 16:53:14.188 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 16:53:14.419 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 16:53:14.768 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 16:53:14.972 [main] UserDaoTest - inserted user: User{id=72, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[DEBUG] 2020-10-21 16:55:27.025 [http-nio-8080-exec-6] UserDao - The list of Users [User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}, User{id=2, firstName='Fred', lastName='Hensen', email='fhensen@hotmail.com', password='supersecret2'}, User{id=3, firstName='Barney', lastName='Curry', email='bcurry@msn.com', password='supersecret3'}, User{id=4, firstName='Karen', lastName='Mack', email='kmack@yahoo.com', password='supersecret4'}, User{id=5, firstName='Dianne', lastName='Klein', email='dklein@gmail.com', password='supersecret5'}, User{id=72, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}]
+[ERROR] 2020-10-21 16:57:48.913 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 16:57:49.542 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 16:57:49.932 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 16:57:50.391 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 16:57:50.723 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=66, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 16:57:51.187 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 16:57:51.656 [main] UserDaoTest - inserted user with a spot: User{id=73, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=67, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=73, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 16:57:52.116 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 16:57:52.562 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 16:57:53.054 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 16:57:53.399 [main] UserDaoTest - inserted user: User{id=74, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-21 19:11:45.240 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 19:11:45.882 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 19:11:46.259 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 19:11:46.471 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 19:11:46.771 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=68, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 19:11:46.970 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 19:11:47.197 [main] UserDaoTest - inserted user with a spot: User{id=75, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=69, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=75, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 19:11:47.328 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 19:11:47.429 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 19:11:47.687 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 19:11:47.769 [main] UserDaoTest - inserted user: User{id=76, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-21 19:24:22.571 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 19:24:24.074 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 19:24:24.806 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 19:24:25.066 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 19:24:25.198 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=70, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 19:24:25.380 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 19:24:25.576 [main] UserDaoTest - inserted user with a spot: User{id=77, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=71, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=77, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 19:24:25.755 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 19:24:25.850 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 19:24:26.140 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 19:24:26.298 [main] UserDaoTest - inserted user: User{id=78, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-21 19:32:52.502 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 19:32:52.990 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 19:32:53.271 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 19:32:53.434 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 19:32:53.622 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=72, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 19:32:53.844 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 19:32:53.978 [main] UserDaoTest - inserted user with a spot: User{id=79, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=73, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=79, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 19:32:54.162 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 19:32:54.254 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 19:32:54.511 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 19:32:54.747 [main] UserDaoTest - inserted user: User{id=80, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-21 19:42:44.400 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 19:42:44.976 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 19:42:45.241 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 19:42:45.436 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 19:42:45.818 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=74, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 19:42:45.987 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 19:42:46.606 [main] UserDaoTest - inserted user with a spot: User{id=81, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=75, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=81, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 19:42:46.918 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 19:42:47.194 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 19:42:47.511 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 19:42:48.004 [main] UserDaoTest - inserted user: User{id=82, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-21 19:45:28.600 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 19:45:29.798 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 19:45:29.970 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 19:45:30.159 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 19:45:30.330 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=76, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 19:45:30.484 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 19:45:30.749 [main] UserDaoTest - inserted user with a spot: User{id=83, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=77, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=83, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 19:45:30.888 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 19:45:30.999 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 19:45:31.211 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 19:45:31.381 [main] UserDaoTest - inserted user: User{id=84, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-21 20:12:05.681 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 20:12:06.133 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 20:12:06.355 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 20:12:06.524 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 20:12:06.690 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=78, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 20:12:06.916 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 20:12:07.107 [main] UserDaoTest - inserted user with a spot: User{id=85, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=79, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=85, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 20:12:07.261 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 20:12:07.335 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 20:12:07.521 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 20:12:07.644 [main] UserDaoTest - inserted user: User{id=86, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-21 21:37:15.832 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-21 21:37:16.316 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-21 21:37:16.548 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 21:37:16.772 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-21 21:37:16.970 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=80, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-21 21:37:17.125 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-21 21:37:17.267 [main] UserDaoTest - inserted user with a spot: User{id=87, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=81, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=87, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-21 21:37:17.415 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-21 21:37:17.557 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-21 21:37:17.755 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-21 21:37:17.871 [main] UserDaoTest - inserted user: User{id=88, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-22 17:39:35.778 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-22 17:39:36.412 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-22 17:39:36.708 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-22 17:39:37.187 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-22 17:39:37.536 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=82, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-22 17:39:37.860 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-22 17:39:38.118 [main] UserDaoTest - inserted user with a spot: User{id=89, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=83, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=89, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-22 17:39:38.788 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-22 17:39:39.244 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-22 17:39:39.659 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-22 17:39:40.041 [main] UserDaoTest - inserted user: User{id=90, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-22 17:48:28.679 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-22 17:48:29.216 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-22 17:48:29.456 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-22 17:48:29.691 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-22 17:48:29.911 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=84, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-22 17:48:30.129 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-22 17:48:30.290 [main] UserDaoTest - inserted user with a spot: User{id=91, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=85, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=91, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-22 17:48:30.453 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-22 17:48:30.536 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-22 17:48:30.722 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-22 17:48:30.855 [main] UserDaoTest - inserted user: User{id=92, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-22 18:05:32.673 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-22 18:05:33.357 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-22 18:05:33.674 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-22 18:05:34.014 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-22 18:05:34.273 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=86, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-22 18:05:34.563 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-22 18:05:34.861 [main] UserDaoTest - inserted user with a spot: User{id=93, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=87, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=93, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-22 18:05:35.049 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-22 18:05:35.240 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-22 18:05:35.418 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-22 18:05:35.518 [main] UserDaoTest - inserted user: User{id=94, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-22 18:21:30.642 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-22 18:21:31.152 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-22 18:21:31.417 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-22 18:21:31.713 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-22 18:21:31.842 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=88, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-22 18:21:32.023 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-22 18:21:32.223 [main] UserDaoTest - inserted user with a spot: User{id=95, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=89, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=95, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-22 18:21:32.385 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-22 18:21:32.508 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-22 18:21:32.737 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-22 18:21:32.897 [main] UserDaoTest - inserted user: User{id=96, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[ERROR] 2020-10-22 18:24:23.873 [main] SpotDaoTest - deleted spot with id=3: null
+[INFO ] 2020-10-22 18:24:25.224 [main] SpotDaoTest - getAll() test - total records in spot: 3
+[INFO ] 2020-10-22 18:24:25.675 [main] SpotDaoTest - getById(2) test: Spot{id=2, spotName='monona2', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-22 18:24:25.815 [main] SpotDaoTest - update() test - updated record 1 : Spot{id=2, spotName='BySchluterBeach', city='monona', state='WI', zipCode='53716', lat=43.071923, lon=-89.333321, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[INFO ] 2020-10-22 18:24:25.988 [main] SpotDaoTest - insert() spot test - new record id: Spot{id=90, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}'}
+[ERROR] 2020-10-22 18:24:26.203 [main] UserDaoTest - deleting user with id=2: null
+[INFO ] 2020-10-22 18:24:26.325 [main] UserDaoTest - inserted user with a spot: User{id=97, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'} // [Spot{id=91, spotName='madison1', city='madison', state='WI', zipCode='53703', lat=43.066675, lon=-89.386825, user='User{id=97, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}'}]
+[INFO ] 2020-10-22 18:24:26.512 [main] UserDaoTest - users size should be 5: 5
+[DEBUG] 2020-10-22 18:24:26.654 [main] UserDaoTest - user info with id = 1: User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}
+[INFO ] 2020-10-22 18:24:26.818 [main] UserDaoTest - new last name for user with id=2: Stevenson
+[INFO ] 2020-10-22 18:24:26.923 [main] UserDaoTest - inserted user: User{id=98, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}
+[DEBUG] 2020-10-22 18:26:28.190 [http-nio-8080-exec-7] UserDao - The list of Users [User{id=1, firstName='Joe', lastName='Coyne', email='jcoyne@gmail.com', password='supersecret1'}, User{id=2, firstName='Fred', lastName='Hensen', email='fhensen@hotmail.com', password='supersecret2'}, User{id=3, firstName='Barney', lastName='Curry', email='bcurry@msn.com', password='supersecret3'}, User{id=4, firstName='Karen', lastName='Mack', email='kmack@yahoo.com', password='supersecret4'}, User{id=5, firstName='Dianne', lastName='Klein', email='dklein@gmail.com', password='supersecret5'}, User{id=98, firstName='Sue', lastName='Hamilton', email='shamilton@gmail.com', password='secret7'}]

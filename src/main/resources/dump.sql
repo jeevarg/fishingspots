@@ -18,100 +18,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `BookSeller`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `BookSeller` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-
-USE `BookSeller`;
-
---
--- Table structure for table `author`
---
-
-DROP TABLE IF EXISTS `author`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `author` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(25) NOT NULL,
-  `last_name` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `author_id_uindex` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `author`
---
-
-LOCK TABLES `author` WRITE;
-/*!40000 ALTER TABLE `author` DISABLE KEYS */;
-INSERT INTO `author` VALUES (1,'Kathy','Sierra'),(2,'Herbert','Schilt'),(3,'Joseph','Ottinger');
-/*!40000 ALTER TABLE `author` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `book`
---
-
-DROP TABLE IF EXISTS `book`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `book` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(70) DEFAULT NULL,
-  `author_id` int DEFAULT NULL,
-  `isbn` varchar(25) DEFAULT NULL,
-  `publication_year` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `book_id_uindex` (`id`),
-  UNIQUE KEY `book_isbn_uindex` (`isbn`),
-  KEY `book_author_id_fk` (`author_id`),
-  CONSTRAINT `book_author_id_fk` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `book`
---
-
-LOCK TABLES `book` WRITE;
-/*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (1,'Head First Java',1,'978-0596009205',2005),(2,'Beginning Hibernate',3,'978-1-4842-2319-2',2016),(3,'Java Beginner\'s Guide',2,'978-0071809252',2014),(165,'Mushrooms of Midwest',1,'978-1-59193-960-3',2014);
-/*!40000 ALTER TABLE `book` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `book1`
---
-
-DROP TABLE IF EXISTS `book1`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `book1` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(70) DEFAULT NULL,
-  `author` varchar(50) DEFAULT NULL,
-  `isbn` varchar(25) DEFAULT NULL,
-  `publication_year` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `book_id_uindex` (`id`),
-  UNIQUE KEY `book_isbn_uindex` (`isbn`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `book1`
---
-
-LOCK TABLES `book1` WRITE;
-/*!40000 ALTER TABLE `book1` DISABLE KEYS */;
-INSERT INTO `book1` VALUES (1,'Head First Java, 2nd Edition','Jeeva Gulli','978-0596009205',2005),(2,'Beginning Hibernate','joseph ottinger','978-1-4842-2319-2',2016),(3,'Java: A Beginner’s Guide (Sixth Edition)','Herbert Schilt','978-0071809252',2014);
-/*!40000 ALTER TABLE `book1` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Current Database: `FishingSpots`
 --
 
@@ -161,13 +67,14 @@ DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
   `id` int NOT NULL AUTO_INCREMENT,
   `roleType` varchar(50) NOT NULL,
-  `createDate` datetime DEFAULT NULL,
-  `updateDate` datetime DEFAULT NULL,
   `userId` int NOT NULL,
+  `email` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `role_email_uindex` (`email`),
   KEY `role_user_fk` (`userId`),
+  CONSTRAINT `role_user_email_fk` FOREIGN KEY (`email`) REFERENCES `user` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `role_user_fk` FOREIGN KEY (`userId`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,6 +83,7 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'admin',1,'jcoyne@gmail.com');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,19 +102,14 @@ CREATE TABLE `spot` (
   `zipCode` varchar(16) NOT NULL,
   `lat` decimal(9,6) NOT NULL,
   `lon` decimal(9,6) NOT NULL,
-  `createDate` datetime DEFAULT NULL,
-  `updateDate` datetime DEFAULT NULL,
-  `userId` int NOT NULL,
-  `reviewId` int NOT NULL,
+  `user_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `spot_lat_uindex` (`lat`),
   UNIQUE KEY `spot_lon_uindex` (`lon`),
   UNIQUE KEY `spot_spotName_uindex` (`spotName`),
-  KEY `spot_user_fk` (`userId`),
-  KEY `spot_review_fk` (`reviewId`),
-  CONSTRAINT `spot_review_fk` FOREIGN KEY (`reviewId`) REFERENCES `review` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `spot_user_fk` FOREIGN KEY (`userId`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `spot_user_fk` (`user_id`),
+  CONSTRAINT `spot_user_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,6 +118,7 @@ CREATE TABLE `spot` (
 
 LOCK TABLES `spot` WRITE;
 /*!40000 ALTER TABLE `spot` DISABLE KEYS */;
+INSERT INTO `spot` VALUES (1,'monona1','monona','WI','53716',43.059477,-89.345463,1),(2,'monona2','monona','WI','53716',43.071923,-89.333321,1),(3,'monona3','monona','WI','53716',43.090115,-89.334885,2);
 /*!40000 ALTER TABLE `spot` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,11 +135,9 @@ CREATE TABLE `user` (
   `lastName` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `createDate` datetime DEFAULT NULL,
-  `updateDate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_email_uindex` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,6 +146,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'Joe','Coyne','jcoyne@gmail.com','supersecret1'),(2,'Fred','Hensen','fhensen@hotmail.com','supersecret2'),(3,'Barney','Curry','bcurry@msn.com','supersecret3'),(4,'Karen','Mack','kmack@yahoo.com','supersecret4'),(5,'Dianne','Klein','dklein@gmail.com','supersecret5'),(66,'Sue','Hamilton','shamilton@gmail.com','secret7');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -348,7 +251,7 @@ CREATE TABLE `db` (
 
 LOCK TABLES `db` WRITE;
 /*!40000 ALTER TABLE `db` DISABLE KEYS */;
-INSERT INTO `db` VALUES ('localhost','performance_schema','mysql.session','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N'),('localhost','sys','mysql.sys','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','Y');
+INSERT INTO `db` VALUES ('localhost','FishingSpots','tomcat','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N'),('localhost','performance_schema','mysql.session','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N'),('localhost','sys','mysql.sys','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','Y');
 /*!40000 ALTER TABLE `db` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -581,7 +484,7 @@ UNLOCK TABLES;
 --
 
 /*!40000 ALTER TABLE `innodb_index_stats` DISABLE KEYS */;
-INSERT  IGNORE INTO `innodb_index_stats` VALUES ('BookSeller','author','PRIMARY','2020-10-12 02:55:17','n_diff_pfx01',3,1,'id'),('BookSeller','author','PRIMARY','2020-10-12 02:55:17','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('BookSeller','author','PRIMARY','2020-10-12 02:55:17','size',1,NULL,'Number of pages in the index'),('BookSeller','author','author_id_uindex','2020-10-12 02:55:17','n_diff_pfx01',3,1,'id'),('BookSeller','author','author_id_uindex','2020-10-12 02:55:17','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('BookSeller','author','author_id_uindex','2020-10-12 02:55:17','size',1,NULL,'Number of pages in the index'),('BookSeller','book','PRIMARY','2020-10-12 02:55:07','n_diff_pfx01',4,1,'id'),('BookSeller','book','PRIMARY','2020-10-12 02:55:07','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('BookSeller','book','PRIMARY','2020-10-12 02:55:07','size',1,NULL,'Number of pages in the index'),('BookSeller','book','book_author_id_fk','2020-10-12 02:55:07','n_diff_pfx01',3,1,'author_id'),('BookSeller','book','book_author_id_fk','2020-10-12 02:55:07','n_diff_pfx02',4,1,'author_id,id'),('BookSeller','book','book_author_id_fk','2020-10-12 02:55:07','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('BookSeller','book','book_author_id_fk','2020-10-12 02:55:07','size',1,NULL,'Number of pages in the index'),('BookSeller','book','book_id_uindex','2020-10-12 02:55:07','n_diff_pfx01',4,1,'id'),('BookSeller','book','book_id_uindex','2020-10-12 02:55:07','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('BookSeller','book','book_id_uindex','2020-10-12 02:55:07','size',1,NULL,'Number of pages in the index'),('BookSeller','book','book_isbn_uindex','2020-10-12 02:55:07','n_diff_pfx01',4,1,'isbn'),('BookSeller','book','book_isbn_uindex','2020-10-12 02:55:07','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('BookSeller','book','book_isbn_uindex','2020-10-12 02:55:07','size',1,NULL,'Number of pages in the index'),('BookSeller','book1','PRIMARY','2020-10-12 03:01:50','n_diff_pfx01',3,1,'id'),('BookSeller','book1','PRIMARY','2020-10-12 03:01:50','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('BookSeller','book1','PRIMARY','2020-10-12 03:01:50','size',1,NULL,'Number of pages in the index'),('BookSeller','book1','book_id_uindex','2020-10-12 03:01:50','n_diff_pfx01',3,1,'id'),('BookSeller','book1','book_id_uindex','2020-10-12 03:01:50','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('BookSeller','book1','book_id_uindex','2020-10-12 03:01:50','size',1,NULL,'Number of pages in the index'),('BookSeller','book1','book_isbn_uindex','2020-10-12 03:01:50','n_diff_pfx01',3,1,'isbn'),('BookSeller','book1','book_isbn_uindex','2020-10-12 03:01:50','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('BookSeller','book1','book_isbn_uindex','2020-10-12 03:01:50','size',1,NULL,'Number of pages in the index'),('FishingSpots','review','PRIMARY','2020-10-14 00:38:43','n_diff_pfx01',0,1,'id'),('FishingSpots','review','PRIMARY','2020-10-14 00:38:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','review','PRIMARY','2020-10-14 00:38:43','size',1,NULL,'Number of pages in the index'),('FishingSpots','review','review_spot_fk','2020-10-14 00:38:43','n_diff_pfx01',0,1,'spotId'),('FishingSpots','review','review_spot_fk','2020-10-14 00:38:43','n_diff_pfx02',0,1,'spotId,id'),('FishingSpots','review','review_spot_fk','2020-10-14 00:38:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','review','review_spot_fk','2020-10-14 00:38:43','size',1,NULL,'Number of pages in the index'),('FishingSpots','review','review_user_fk','2020-10-14 00:38:43','n_diff_pfx01',0,1,'userId'),('FishingSpots','review','review_user_fk','2020-10-14 00:38:43','n_diff_pfx02',0,1,'userId,id'),('FishingSpots','review','review_user_fk','2020-10-14 00:38:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','review','review_user_fk','2020-10-14 00:38:43','size',1,NULL,'Number of pages in the index'),('FishingSpots','role','PRIMARY','2020-10-14 00:38:55','n_diff_pfx01',0,1,'id'),('FishingSpots','role','PRIMARY','2020-10-14 00:38:55','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','role','PRIMARY','2020-10-14 00:38:55','size',1,NULL,'Number of pages in the index'),('FishingSpots','role','role_user_fk','2020-10-14 00:38:55','n_diff_pfx01',0,1,'userId'),('FishingSpots','role','role_user_fk','2020-10-14 00:38:55','n_diff_pfx02',0,1,'userId,id'),('FishingSpots','role','role_user_fk','2020-10-14 00:38:55','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','role','role_user_fk','2020-10-14 00:38:55','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','PRIMARY','2020-10-14 00:38:21','n_diff_pfx01',0,1,'id'),('FishingSpots','spot','PRIMARY','2020-10-14 00:38:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','PRIMARY','2020-10-14 00:38:21','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','spot_lat_uindex','2020-10-14 00:38:21','n_diff_pfx01',0,1,'lat'),('FishingSpots','spot','spot_lat_uindex','2020-10-14 00:38:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','spot_lat_uindex','2020-10-14 00:38:21','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','spot_lon_uindex','2020-10-14 00:38:21','n_diff_pfx01',0,1,'lon'),('FishingSpots','spot','spot_lon_uindex','2020-10-14 00:38:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','spot_lon_uindex','2020-10-14 00:38:21','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','spot_review_fk','2020-10-14 00:38:21','n_diff_pfx01',0,1,'reviewId'),('FishingSpots','spot','spot_review_fk','2020-10-14 00:38:21','n_diff_pfx02',0,1,'reviewId,id'),('FishingSpots','spot','spot_review_fk','2020-10-14 00:38:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','spot_review_fk','2020-10-14 00:38:21','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','spot_spotName_uindex','2020-10-14 00:38:21','n_diff_pfx01',0,1,'spotName'),('FishingSpots','spot','spot_spotName_uindex','2020-10-14 00:38:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','spot_spotName_uindex','2020-10-14 00:38:21','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','spot_user_fk','2020-10-14 00:38:21','n_diff_pfx01',0,1,'userId'),('FishingSpots','spot','spot_user_fk','2020-10-14 00:38:21','n_diff_pfx02',0,1,'userId,id'),('FishingSpots','spot','spot_user_fk','2020-10-14 00:38:21','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','spot_user_fk','2020-10-14 00:38:21','size',1,NULL,'Number of pages in the index'),('FishingSpots','user','PRIMARY','2020-10-14 00:39:19','n_diff_pfx01',0,1,'id'),('FishingSpots','user','PRIMARY','2020-10-14 00:39:19','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','user','PRIMARY','2020-10-14 00:39:19','size',1,NULL,'Number of pages in the index'),('FishingSpots','user','user_email_uindex','2020-10-14 00:39:19','n_diff_pfx01',0,1,'email'),('FishingSpots','user','user_email_uindex','2020-10-14 00:39:19','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','user','user_email_uindex','2020-10-14 00:39:19','size',1,NULL,'Number of pages in the index'),('mysql','component','PRIMARY','2020-09-09 02:16:52','n_diff_pfx01',0,1,'component_id'),('mysql','component','PRIMARY','2020-09-09 02:16:52','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('mysql','component','PRIMARY','2020-09-09 02:16:52','size',1,NULL,'Number of pages in the index'),('sample','user','PRIMARY','2020-09-16 09:28:09','n_diff_pfx01',6,1,'id'),('sample','user','PRIMARY','2020-09-16 09:28:09','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('sample','user','PRIMARY','2020-09-16 09:28:09','size',1,NULL,'Number of pages in the index'),('sample','user','users_user_name_uindex','2020-09-16 09:28:09','n_diff_pfx01',6,1,'user_name'),('sample','user','users_user_name_uindex','2020-09-16 09:28:09','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('sample','user','users_user_name_uindex','2020-09-16 09:28:09','size',1,NULL,'Number of pages in the index'),('sys','sys_config','PRIMARY','2019-05-11 14:57:28','n_diff_pfx01',2,1,'variable'),('sys','sys_config','PRIMARY','2019-05-11 14:57:28','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('sys','sys_config','PRIMARY','2019-05-11 14:57:28','size',1,NULL,'Number of pages in the index');
+INSERT  IGNORE INTO `innodb_index_stats` VALUES ('FishingSpots','review','PRIMARY','2020-10-14 00:38:43','n_diff_pfx01',0,1,'id'),('FishingSpots','review','PRIMARY','2020-10-14 00:38:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','review','PRIMARY','2020-10-14 00:38:43','size',1,NULL,'Number of pages in the index'),('FishingSpots','review','review_spot_fk','2020-10-14 00:38:43','n_diff_pfx01',0,1,'spotId'),('FishingSpots','review','review_spot_fk','2020-10-14 00:38:43','n_diff_pfx02',0,1,'spotId,id'),('FishingSpots','review','review_spot_fk','2020-10-14 00:38:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','review','review_spot_fk','2020-10-14 00:38:43','size',1,NULL,'Number of pages in the index'),('FishingSpots','review','review_user_fk','2020-10-14 00:38:43','n_diff_pfx01',0,1,'userId'),('FishingSpots','review','review_user_fk','2020-10-14 00:38:43','n_diff_pfx02',0,1,'userId,id'),('FishingSpots','review','review_user_fk','2020-10-14 00:38:43','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','review','review_user_fk','2020-10-14 00:38:43','size',1,NULL,'Number of pages in the index'),('FishingSpots','role','PRIMARY','2020-10-21 18:05:04','n_diff_pfx01',1,1,'id'),('FishingSpots','role','PRIMARY','2020-10-21 18:05:04','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','role','PRIMARY','2020-10-21 18:05:04','size',1,NULL,'Number of pages in the index'),('FishingSpots','role','role_email_uindex','2020-10-21 18:05:04','n_diff_pfx01',1,1,'email'),('FishingSpots','role','role_email_uindex','2020-10-21 18:05:04','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','role','role_email_uindex','2020-10-21 18:05:04','size',1,NULL,'Number of pages in the index'),('FishingSpots','role','role_user_fk','2020-10-21 18:05:04','n_diff_pfx01',1,1,'userId'),('FishingSpots','role','role_user_fk','2020-10-21 18:05:04','n_diff_pfx02',1,1,'userId,id'),('FishingSpots','role','role_user_fk','2020-10-21 18:05:04','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','role','role_user_fk','2020-10-21 18:05:04','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','PRIMARY','2020-10-21 18:05:14','n_diff_pfx01',3,1,'id'),('FishingSpots','spot','PRIMARY','2020-10-21 18:05:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','PRIMARY','2020-10-21 18:05:14','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','spot_lat_uindex','2020-10-21 18:05:14','n_diff_pfx01',3,1,'lat'),('FishingSpots','spot','spot_lat_uindex','2020-10-21 18:05:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','spot_lat_uindex','2020-10-21 18:05:14','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','spot_lon_uindex','2020-10-21 18:05:14','n_diff_pfx01',3,1,'lon'),('FishingSpots','spot','spot_lon_uindex','2020-10-21 18:05:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','spot_lon_uindex','2020-10-21 18:05:14','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','spot_spotName_uindex','2020-10-21 18:05:14','n_diff_pfx01',3,1,'spotName'),('FishingSpots','spot','spot_spotName_uindex','2020-10-21 18:05:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','spot_spotName_uindex','2020-10-21 18:05:14','size',1,NULL,'Number of pages in the index'),('FishingSpots','spot','spot_user_fk','2020-10-21 18:05:14','n_diff_pfx01',2,1,'user_id'),('FishingSpots','spot','spot_user_fk','2020-10-21 18:05:14','n_diff_pfx02',3,1,'user_id,id'),('FishingSpots','spot','spot_user_fk','2020-10-21 18:05:14','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','spot','spot_user_fk','2020-10-21 18:05:14','size',1,NULL,'Number of pages in the index'),('FishingSpots','user','PRIMARY','2020-10-21 18:04:54','n_diff_pfx01',6,1,'id'),('FishingSpots','user','PRIMARY','2020-10-21 18:04:54','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','user','PRIMARY','2020-10-21 18:04:54','size',1,NULL,'Number of pages in the index'),('FishingSpots','user','user_email_uindex','2020-10-21 18:04:54','n_diff_pfx01',6,1,'email'),('FishingSpots','user','user_email_uindex','2020-10-21 18:04:54','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('FishingSpots','user','user_email_uindex','2020-10-21 18:04:54','size',1,NULL,'Number of pages in the index'),('mysql','component','PRIMARY','2020-09-09 02:16:52','n_diff_pfx01',0,1,'component_id'),('mysql','component','PRIMARY','2020-09-09 02:16:52','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('mysql','component','PRIMARY','2020-09-09 02:16:52','size',1,NULL,'Number of pages in the index'),('sample','user','PRIMARY','2020-09-16 09:28:09','n_diff_pfx01',6,1,'id'),('sample','user','PRIMARY','2020-09-16 09:28:09','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('sample','user','PRIMARY','2020-09-16 09:28:09','size',1,NULL,'Number of pages in the index'),('sample','user','users_user_name_uindex','2020-09-16 09:28:09','n_diff_pfx01',6,1,'user_name'),('sample','user','users_user_name_uindex','2020-09-16 09:28:09','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('sample','user','users_user_name_uindex','2020-09-16 09:28:09','size',1,NULL,'Number of pages in the index'),('sys','sys_config','PRIMARY','2019-05-11 14:57:28','n_diff_pfx01',2,1,'variable'),('sys','sys_config','PRIMARY','2019-05-11 14:57:28','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('sys','sys_config','PRIMARY','2019-05-11 14:57:28','size',1,NULL,'Number of pages in the index'),('testBookSeller','author','PRIMARY','2020-10-18 22:09:25','n_diff_pfx01',3,1,'id'),('testBookSeller','author','PRIMARY','2020-10-18 22:09:25','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('testBookSeller','author','PRIMARY','2020-10-18 22:09:25','size',1,NULL,'Number of pages in the index'),('testBookSeller','author','author_id_uindex','2020-10-18 22:09:25','n_diff_pfx01',3,1,'id'),('testBookSeller','author','author_id_uindex','2020-10-18 22:09:25','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('testBookSeller','author','author_id_uindex','2020-10-18 22:09:25','size',1,NULL,'Number of pages in the index'),('testBookSeller','book','PRIMARY','2020-10-18 22:09:35','n_diff_pfx01',3,1,'id'),('testBookSeller','book','PRIMARY','2020-10-18 22:09:35','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('testBookSeller','book','PRIMARY','2020-10-18 22:09:35','size',1,NULL,'Number of pages in the index'),('testBookSeller','book','book_author_id_fk','2020-10-18 22:09:35','n_diff_pfx01',3,1,'author_id'),('testBookSeller','book','book_author_id_fk','2020-10-18 22:09:35','n_diff_pfx02',3,1,'author_id,id'),('testBookSeller','book','book_author_id_fk','2020-10-18 22:09:35','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('testBookSeller','book','book_author_id_fk','2020-10-18 22:09:35','size',1,NULL,'Number of pages in the index'),('testBookSeller','book','book_id_uindex','2020-10-18 22:09:35','n_diff_pfx01',3,1,'id'),('testBookSeller','book','book_id_uindex','2020-10-18 22:09:35','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('testBookSeller','book','book_id_uindex','2020-10-18 22:09:35','size',1,NULL,'Number of pages in the index'),('testBookSeller','book','book_isbn_uindex','2020-10-18 22:09:35','n_diff_pfx01',3,1,'isbn'),('testBookSeller','book','book_isbn_uindex','2020-10-18 22:09:35','n_leaf_pages',1,NULL,'Number of leaf pages in the index'),('testBookSeller','book','book_isbn_uindex','2020-10-18 22:09:35','size',1,NULL,'Number of pages in the index');
 /*!40000 ALTER TABLE `innodb_index_stats` ENABLE KEYS */;
 
 --
@@ -589,7 +492,7 @@ INSERT  IGNORE INTO `innodb_index_stats` VALUES ('BookSeller','author','PRIMARY'
 --
 
 /*!40000 ALTER TABLE `innodb_table_stats` DISABLE KEYS */;
-INSERT  IGNORE INTO `innodb_table_stats` VALUES ('BookSeller','author','2020-10-12 02:55:17',3,1,1),('BookSeller','book','2020-10-12 02:55:07',4,1,3),('BookSeller','book1','2020-10-12 03:01:50',3,1,2),('FishingSpots','review','2020-10-14 00:38:43',0,1,2),('FishingSpots','role','2020-10-14 00:38:55',0,1,1),('FishingSpots','spot','2020-10-14 00:38:21',0,1,5),('FishingSpots','user','2020-10-14 00:39:19',0,1,1),('mysql','component','2020-09-09 02:16:52',0,1,0),('sample','user','2020-09-16 09:28:09',6,1,1),('sys','sys_config','2019-05-11 14:57:28',2,1,0);
+INSERT  IGNORE INTO `innodb_table_stats` VALUES ('FishingSpots','review','2020-10-14 00:38:43',0,1,2),('FishingSpots','role','2020-10-21 18:05:04',1,1,2),('FishingSpots','spot','2020-10-21 18:05:14',3,1,4),('FishingSpots','user','2020-10-21 18:04:54',6,1,1),('mysql','component','2020-09-09 02:16:52',0,1,0),('sample','user','2020-09-16 09:28:09',6,1,1),('sys','sys_config','2019-05-11 14:57:28',2,1,0),('testBookSeller','author','2020-10-18 22:09:25',3,1,1),('testBookSeller','book','2020-10-18 22:09:35',3,1,3);
 /*!40000 ALTER TABLE `innodb_table_stats` ENABLE KEYS */;
 
 --
@@ -1102,7 +1005,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('localhost','mysql.infoschema','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'caching_sha2_password','$A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED','N','2019-05-11 14:57:28',NULL,'Y','N','N',NULL,NULL,NULL,NULL),('localhost','mysql.session','N','N','N','N','N','N','N','Y','N','N','N','N','N','N','N','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'caching_sha2_password','$A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED','N','2019-05-11 14:57:28',NULL,'Y','N','N',NULL,NULL,NULL,NULL),('localhost','mysql.sys','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'caching_sha2_password','$A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED','N','2020-09-09 02:16:51',NULL,'Y','N','N',NULL,NULL,NULL,NULL),('localhost','root','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','','','','',0,0,0,0,'mysql_native_password','*1308E0FCD43112F8D948AB093F54892CB7B220AA','N','2019-05-11 14:57:30',NULL,'N','Y','Y',NULL,NULL,NULL,NULL);
+INSERT INTO `user` VALUES ('localhost','mysql.infoschema','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'caching_sha2_password','$A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED','N','2019-05-11 14:57:28',NULL,'Y','N','N',NULL,NULL,NULL,NULL),('localhost','mysql.session','N','N','N','N','N','N','N','Y','N','N','N','N','N','N','N','Y','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'caching_sha2_password','$A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED','N','2019-05-11 14:57:28',NULL,'Y','N','N',NULL,NULL,NULL,NULL),('localhost','mysql.sys','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'caching_sha2_password','$A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED','N','2020-09-09 02:16:51',NULL,'Y','N','N',NULL,NULL,NULL,NULL),('localhost','root','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y','','','','',0,0,0,0,'mysql_native_password','*1308E0FCD43112F8D948AB093F54892CB7B220AA','N','2019-05-11 14:57:30',NULL,'N','Y','Y',NULL,NULL,NULL,NULL),('localhost','tomcat','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','','','','',0,0,0,0,'mysql_native_password','*BC76B32594D63CEE07D4144CBFD349B88E2FDBBB','N','2020-10-21 01:43:10',NULL,'N','N','N',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1180,6 +1083,71 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES (1,'Joe','Coyne','jcoyne','supersecret1','1964-04-01'),(2,'Fred','Hensen','fhensen','supersecret2','1988-05-08'),(3,'Barney','Curry','bcurry','supersecret3','1947-11-11'),(4,'Karen','Mack','kmack','supersecret4','1986-07-08'),(5,'Dianne','Klein','dklein','supersecret5','1991-01-22'),(6,'Dawn','Tillman','dtillman','supersecret6','1979-08-30');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Current Database: `testBookSeller`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `testBookSeller` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+USE `testBookSeller`;
+
+--
+-- Table structure for table `author`
+--
+
+DROP TABLE IF EXISTS `author`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `author` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(25) NOT NULL,
+  `last_name` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `author_id_uindex` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `author`
+--
+
+LOCK TABLES `author` WRITE;
+/*!40000 ALTER TABLE `author` DISABLE KEYS */;
+INSERT INTO `author` VALUES (1,'Kathy','Sierra'),(2,'Herbert','Schilt'),(3,'Joseph','Ottinger');
+/*!40000 ALTER TABLE `author` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `book`
+--
+
+DROP TABLE IF EXISTS `book`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `book` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(70) DEFAULT NULL,
+  `author_id` int DEFAULT NULL,
+  `isbn` varchar(25) DEFAULT NULL,
+  `publication_year` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `book_id_uindex` (`id`),
+  UNIQUE KEY `book_isbn_uindex` (`isbn`),
+  KEY `book_author_id_fk` (`author_id`),
+  CONSTRAINT `book_author_id_fk` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `book`
+--
+
+LOCK TABLES `book` WRITE;
+/*!40000 ALTER TABLE `book` DISABLE KEYS */;
+INSERT INTO `book` VALUES (1,'Head First Java',1,'978-0596009205',2005),(2,'Beginning Hibernate',3,'978-1-4842-2319-2',2016),(3,'Java Beginner\'s Guide',2,'978-0071809252',2014);
+/*!40000 ALTER TABLE `book` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 /*!50606 SET GLOBAL INNODB_STATS_AUTO_RECALC=@OLD_INNODB_STATS_AUTO_RECALC */;
 
@@ -1191,4 +1159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-13 19:50:02
+-- Dump completed on 2020-10-21 15:27:12

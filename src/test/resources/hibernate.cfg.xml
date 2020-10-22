@@ -20,6 +20,7 @@
         <mapping class="edu.matc.entity.User"></mapping>
         <mapping class="edu.matc.entity.Spot"></mapping>
 
+
     </session-factory>
 
 </hibernate-configuration>
