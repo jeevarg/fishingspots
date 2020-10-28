@@ -62,9 +62,12 @@
 | 10/20/2020| Did week7 reading, watched videos, updated TimeLog file and started implementing code | 4 | |
 | 10/21/2020| Worked on week7 exercise and made it work in the VM. Attended webex class | 8 | |
 | 10/22/2020| Finished week7 work by implementing code for the AWS and pushed to github. Updated TimeLog.md | 4 | |
-
-
-
-
-
+| 10/23/2020| Started with week 8. Studied the course material for week 8 | 3 | |
+| 10/24/2020| Did more reading on week 8 and started watching the videos for week8 | 6 | |
+| 10/25/2020| Finished week8 activities - working with SOAPUI, implementing a REST webservice | 8 | |
+| | |  | |
+| WEEK 9 Activities | |  | |
+| 10/26/2020| Started working on week8 exercise. Implementing ZipCodesByRadius REST webservice in Indie project | 6 | |
+| 10/27/2020| Finished week8 exercise and worked on implementing GoogleMapsAPI in Indie project | 5 | |
+| 10/28/2020| Pushed week8 work to Github, updated TimeLog.md file and started working on Professional Development presentation | 3 | |
 
