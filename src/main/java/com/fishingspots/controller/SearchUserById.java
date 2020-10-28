@@ -1,6 +1,6 @@
-package edu.matc.controller;
+package com.fishingspots.controller;
 
-import edu.matc.persistence.UserDao;
+import com.fishingspots.persistence.UserDao;
 //import edu.matc.persistence.SpotDao;
 
 import javax.servlet.RequestDispatcher;

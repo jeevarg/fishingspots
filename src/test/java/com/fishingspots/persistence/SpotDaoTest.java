@@ -1,8 +1,8 @@
-package edu.matc.persistence;
+package com.fishingspots.persistence;
 
-import edu.matc.entity.User;
-import edu.matc.entity.Spot;
-import edu.matc.test.util.Database;
+import com.fishingspots.entity.Spot;
+import com.fishingspots.entity.User;
+import com.fishingspots.test.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -41,10 +41,10 @@ class SpotDaoTest {
         Spot spot = (Spot) genericDao.getById(2);
         assertNotNull(spot);
         logger.info("getById(2) test: " + spot);
-        assertTrue("monona2".equals(spot.getSpotName()));
-        assertTrue("monona".equals(spot.getCity()));
-        assertTrue("WI".equals(spot.getState()));
-        assertTrue("53716".equals(spot.getZipCode()));
+        assertEquals("monona2", spot.getSpotName());
+        assertEquals("monona", spot.getCity());
+        assertEquals("WI", spot.getState());
+        assertEquals("53716", spot.getZipCode());
         assertEquals(43.071923, spot.getLat());
         assertEquals(-89.333321, spot.getLon());
         assertEquals(1, spot.getUser().getId());

@@ -1,4 +1,4 @@
-package edu.matc.persistence;
+package com.fishingspots.persistence;
 
 //import edu.matc.entity.Book;
 import org.apache.logging.log4j.LogManager;

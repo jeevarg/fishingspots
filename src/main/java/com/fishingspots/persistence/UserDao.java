@@ -1,6 +1,6 @@
-package edu.matc.persistence;
+package com.fishingspots.persistence;
 
-import edu.matc.entity.User;
+import com.fishingspots.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;

@@ -1,8 +1,8 @@
-package edu.matc.persistence;
+package com.fishingspots.persistence;
 
-import edu.matc.entity.User;
-import edu.matc.entity.Spot;
-import edu.matc.test.util.Database;
+import com.fishingspots.entity.Spot;
+import com.fishingspots.entity.User;
+import com.fishingspots.test.util.Database;
 //import edu.matc.testUtils.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,4 +1,4 @@
-package edu.matc.entity;
+package com.fishingspots.entity;
 
 
 import org.hibernate.annotations.GenericGenerator;
