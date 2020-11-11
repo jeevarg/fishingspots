@@ -70,4 +70,16 @@
 | 10/26/2020| Started working on week8 exercise. Implementing ZipCodesByRadius REST webservice in Indie project | 6 | |
 | 10/27/2020| Finished week8 exercise and worked on implementing GoogleMapsAPI in Indie project | 5 | |
 | 10/28/2020| Pushed week8 work to Github, updated TimeLog.md file and started working on Professional Development presentation | 3 | |
-
+| 10/31/2020| Started with week9 readings and videos | 5 | |
+| 11/1/2020| Started working on the activities and the exercise | 3 | |
+| | |  | |
+| WEEK 10 Activities | |  | |
+| 11/2/2020| Worked on week9 exercise | 3 | |
+| 11/3/2020| Worked on week9 exercise | 3 | |
+| 11/4/2020| Finished week9 exercise in creating a web service and attended weekly webex class | 8 | |
+| | |  | |
+| WEEK 11 Activities | |  | |
+| 11/9/2020| Worked on integrating the google maps api in the indie project | 3  | |
+| 11/10/2020| Continued working on integrating the google maps and the zip code API's in the indie project | 3  | |
+| 11/11/2020| Worked on week10 activity, provided feedbacks for professional development presentations and updated Timelog.md file | 5  | |
+| | |  | |
