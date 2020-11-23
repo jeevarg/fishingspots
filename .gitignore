@@ -54,3 +54,5 @@ src/main/resources/hibernate.cfg.xml
 src/test/resources/database.properties
 src/test/resources/hibernate.cfg.xml
 src/test/java/edu/matc/test/util/Database.java
+src/main/webapp/META-INF/context.xml
+

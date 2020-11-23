@@ -1,7 +1,6 @@
 package com.fishingspots.controller;
 
 import com.fishingspots.persistence.UserDao;
-//import edu.matc.persistence.SpotDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -3,7 +3,6 @@ package com.fishingspots.persistence;
 import com.fishingspots.entity.Spot;
 import com.fishingspots.entity.User;
 import com.fishingspots.test.util.Database;
-//import edu.matc.testUtils.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
