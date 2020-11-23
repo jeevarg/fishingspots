@@ -82,4 +82,17 @@
 | 11/9/2020| Worked on integrating the google maps api in the indie project | 3  | |
 | 11/10/2020| Continued working on integrating the google maps and the zip code API's in the indie project | 3  | |
 | 11/11/2020| Worked on week10 activity, provided feedbacks for professional development presentations and updated Timelog.md file | 5  | |
+| 11/11/2020| Finalized on the team project and conceptualized the idea | 3  | |
+| 11/12/2020| Met with the team on Discord.com and searched for API's to use in the team project | 4  | |
+| 11/13/2020| Searched for API's and found 3 API's that are to be consumed in the team project | 4  | |
+| 11/14/2020| Initial implementation of web service's classes for team project | 5 | |
 | | |  | |
+| WEEK 12 Activities| |  | |
+| 11/15/2020| Implemented the tests for the 3 web service API Dao's in team project | 5 | |
+| 11/16/2020| Worked on the index and results page for the team project | 4 | |
+| 11/17/2020| Worked on the results page to fix the display | 4  | |
+| 11/18/2020| Fixed the display for results.jsp, attended class on webex and did team project presentation | 4 | |
+| 11/19/2020 to 11/22/2020| Implemented different features in the team project like w3.css styling in jsp pages, moved the API keys to a properties file, improvised on the service calling | 15 | |
+| | |  | |
+| WEEK 13 Activities| |  | |
+| 11/23/2020| Updated the TimeLog.md file and resumed working on the individual project | 4 | |
