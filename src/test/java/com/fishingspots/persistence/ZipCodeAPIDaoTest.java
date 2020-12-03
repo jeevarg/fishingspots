@@ -13,9 +13,9 @@ class ZipCodeAPIDaoTest {
     /**
      * Gets zip codes by radius success.
      */
-    @Test
+  /*  @Test
     void getZipCodesByRadiusSuccess() {
         ZipCodeAPIDao dao = new ZipCodeAPIDao();
         assertEquals("53711", dao.getZipCodesByRadius().getZipCodes().get(0).getZipCode());
-    }
+    }*/
 }

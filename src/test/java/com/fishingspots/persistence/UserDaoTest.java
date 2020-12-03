@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class UserDaoTest {
 
     //UserDao dao;
-    GenericDao genericDao;
+   /* GenericDao genericDao;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
 
@@ -31,7 +31,7 @@ public class UserDaoTest {
      * 1. execute sql which deletes everything from the table and inserts records)
      * 2. Create any objects needed in the tests
      */
-    @BeforeEach
+   /* @BeforeEach
     void setUp() {
         genericDao = new GenericDao(User.class);
         Database database = Database.getInstance();
@@ -43,7 +43,7 @@ public class UserDaoTest {
     /**
      * Verify successful retrieval of a User
      */
-    @Test
+   /* @Test
     void getByIdSuccess() {
         User retrievedUser = (User) genericDao.getById(1);
         logger.debug("user info with id = 1: " + retrievedUser);
@@ -56,7 +56,7 @@ public class UserDaoTest {
     /**
      * Verify successful insert of a User
      */
-    @Test
+   /* @Test
     void insertSuccess() {
 
         User newUser = new User("Sue", "Hamilton", "shamilton@gmail.com","secret7");
@@ -72,7 +72,7 @@ public class UserDaoTest {
     /**
      * Verify successful insert of a User with a Spot
      */
-    @Test
+   /* @Test
     void insertWithSpotSuccess() {
 
         User newUser = new User("Sue", "Hamilton", "shamilton@gmail.com","secret7");
@@ -98,7 +98,7 @@ public class UserDaoTest {
     /**
      * Verify successful update of a User
      */
-    @Test
+   /* @Test
     void updateSuccess() {
         String newLastName = "Stevenson";
         User userToUpdate = (User) genericDao.getById(2);
@@ -112,7 +112,7 @@ public class UserDaoTest {
     /**
      * Verify successful delete of User
      */
-    @Test
+   /* @Test
     void deleteSuccess() {
         genericDao.delete(genericDao.getById(2));
         logger.error("deleting user with id=2: " + genericDao.getById(2));
@@ -122,10 +122,10 @@ public class UserDaoTest {
     /**
      * Verify successful retrieval of all Users
      */
-    @Test
+   /* @Test
     void getAllSuccess() {
         List<User> users = genericDao.getAll();
         logger.info("users size should be 5: " + users.size());
         assertEquals(5, users.size());
-    }
+    }*/
 }

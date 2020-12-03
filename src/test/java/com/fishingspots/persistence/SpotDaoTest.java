@@ -17,14 +17,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * Class to Instantiate the Dao and carry out various tests.
  */
 class SpotDaoTest {
-    private final Logger logger = LogManager.getLogger(this.getClass());
+   /* private final Logger logger = LogManager.getLogger(this.getClass());
     //SpotDao spotDao;
     GenericDao genericDao;
 
     /**
      * Instantiates a new Dao and runs cleandb.sql
      */
-    @BeforeEach
+   /* @BeforeEach
     void setUp() {
         //  spotDao = new SpotDao();
         genericDao = new GenericDao(Spot.class);
@@ -36,7 +36,7 @@ class SpotDaoTest {
     /**
      * test to verify the getByIDSuccess()
      */
-    @Test
+   /* @Test
     void getByIdSuccess() {
         Spot spot = (Spot) genericDao.getById(2);
         assertNotNull(spot);
@@ -53,7 +53,7 @@ class SpotDaoTest {
     /**
      * test to verify saveOrUpdate() success
      */
-    @Test
+   /* @Test
     void saveOrUpdate() {
         String newSpotName = "BySchluterBeach";
         Spot spot = (Spot) genericDao.getById(2);
@@ -69,7 +69,7 @@ class SpotDaoTest {
     /**
      * test to verify insert() success
      */
-    @Test
+   /* @Test
     void insertSuccess() {
         genericDao = new GenericDao(User.class);
         User user = (User) genericDao.getById(1);
@@ -87,7 +87,7 @@ class SpotDaoTest {
     /**
      * test to verify getAll() success
      */
-    @Test
+    /*@Test
     void getAll() {
         List<Spot> spots = genericDao.getAll();
         logger.info("getAll() test - total records in spot: " + spots.size());
@@ -98,10 +98,11 @@ class SpotDaoTest {
     /**
      * test to verify delete() success
      */
-    @Test
+   /* @Test
     void delete() {
         genericDao.delete(genericDao.getById(3));
         logger.error("deleted spot with id=3: " + genericDao.getById(3));
         assertNull(genericDao.getById(3));
-    }
+    }*/
+
 }
