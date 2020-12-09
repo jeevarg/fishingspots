@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fishingspots.entity.Spot;
 import com.fishingspots.entity.ZipCodesByRadius;
 import com.fishingspots.entity.ZipCodesItem;
+import com.fishingspots.utilities.PropertiesLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,6 +15,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 
 /**
@@ -22,9 +24,10 @@ import java.util.List;
  */
 public class ZipCodeAPIDao {
 
+    PropertiesLoader loader = new PropertiesLoader();
+    Properties properties = loader.loadProperties();
+    private final String key = properties.getProperty("zipCodeAPIKey");
     private final Logger logger = LogManager.getLogger(this.getClass());
-    private String zipCodeAPIKey = "KYG5KyPosZ1BsXNfv61Sclgn9zoBL6REukmKNd76nnDHhYwzv32Ko9DVkRD8Kz3y";
-    //private String zipCode = "53713";
 
     /**
      * Gets zip codes by radius.
@@ -34,7 +37,7 @@ public class ZipCodeAPIDao {
     public List<Spot> getZipCodesByRadius(int zipCode, int miles) {
         Client client = ClientBuilder.newClient();
         WebTarget target =
-                client.target("http://www.zipcodeapi.com/rest/"+zipCodeAPIKey+"/radius.json/"+zipCode+"/"+miles+"/mile");
+                client.target("http://www.zipcodeapi.com/rest/"+key+"/radius.json/"+zipCode+"/"+miles+"/mile");
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         ObjectMapper mapper = new ObjectMapper();
         ZipCodesByRadius zipCodes = null;

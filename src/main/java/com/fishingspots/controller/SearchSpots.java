@@ -40,7 +40,7 @@ public class SearchSpots extends HttpServlet {
         ZipCodeAPIDao dao = new ZipCodeAPIDao();
         req.setAttribute("spots", dao.getZipCodesByRadius(zipCode,miles));
 
-        //RequestDispatcher dispatcher = req.getRequestDispatcher("/spots.jsp");
-        //dispatcher.forward(req, resp);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/spots.jsp");
+        dispatcher.forward(req, resp);
     }
 }

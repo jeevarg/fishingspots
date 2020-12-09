@@ -1,3 +1,5 @@
+<%@ page import="com.fishingspots.utilities.PropertiesLoader" %>
+<%@ page import="java.util.Properties" %>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -16,7 +18,39 @@
         }
     </style>
     <script type="text/javascript">
-        <c:import url="map.js"/>
+        function initMap(listener) {
+            // Map options
+            const options = {
+                zoom:12,
+                center:{lat:43.0731, lng:-89.4012}
+            }
+
+            // New map
+            const map = new google.maps.Map(document.getElementById('map'), options);
+
+            function addMarker(myLatLng){
+                let marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map:map,
+                    title: "Hello World!",
+                });
+
+            }
+
+            if('${requestScope.containsKey('spots')}') {
+                if(parseInt('${requestScope.spots.size()}') != 0) {
+                    let myLatLng;
+                    let i;
+                    let size = parseInt('${requestScope.spots.size()}');
+                    for (i = 0; i < size; i++) {
+                        myLatLng = {lat:parseFloat('${requestScope.spots.get(i).lat}'), lng:parseFloat('${requestScope.spots.get(i).lon}')};
+                        addMarker(myLatLng);
+                        //addMarker({lat:43.071923, lng:-89.333321});
+                        console.log(myLatLng);
+                    }
+                }
+            }
+        }
     </script>
 </head>
 
@@ -41,8 +75,12 @@
     </div>
 
     <div id="map" class="w3-container w3-right w3-border" style="width:75%;height:70%">
+        <% PropertiesLoader loader = new PropertiesLoader(); %>
+        <% Properties properties = loader.loadProperties(); %>
+        <!--//src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxfLy10XWAiDUurS2MNHKaIs31WoDLvYY&libraries=drawing&callback=initMap">-->
+
         <script defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTjOH-2jJDtCvlFJaxaTJRKQniaw6Jslo&libraries=drawing&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=<%=properties.getProperty("googleMapAPIKey")%>&libraries=drawing&callback=initMap">
         </script>
     </div>
 
