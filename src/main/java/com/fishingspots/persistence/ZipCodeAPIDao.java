@@ -53,6 +53,7 @@ public class ZipCodeAPIDao {
             SpotDao spotDao = new SpotDao();
             //logger.info("ZCDao, line 51: " + zip.getZipCode());
             spots.addAll(spotDao.getByZipCode(zip.getZipCode()));
+
         }
 
         //return zipCodes.getZipCodes();

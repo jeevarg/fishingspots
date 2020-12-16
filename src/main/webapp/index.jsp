@@ -12,12 +12,21 @@
 
 <c:import url="header.jsp"/>
     <div class="w3-container w3-light-gray w3-left w3-border" style="width:100%;height:70%">
+        <h4>
+            <p>Welcome to Fishing-Spots!</p>
+            <p>Fishing-Spots lets you look up for any / all spots without any sign-up. However, if you do sign-up, you can
+            add, edit, delete your own spots and also rate any spot. </p>
+        </h4>
+            <a href="spots.jsp"> <button class="w3-button w3-dark-gray w3-padding-large w3-margin-bottom">Continue As Guest</button></a>
+            <a href="loginAction"> <button class="w3-button w3-dark-gray w3-padding-large w3-margin-bottom">Log In</button></a>
+            <a href="register.jsp"> <button class="w3-button w3-dark-gray w3-padding-large w3-margin-bottom">Register</button></a>
+        <c:if test="${pageContext.request.isUserInRole('admin'||'user')}">
+            <a href="spots.jsp"> <button class="w3-button w3-dark-gray w3-padding-large w3-margin-bottom">Search Spots</button></a>
+        </c:if>
 
-        <a href="spots.jsp"> <button class="w3-button w3-dark-gray w3-padding-large w3-margin-bottom">Continue As Guest</button></a>
-        <a href="login.jsp"> <button class="w3-button w3-dark-gray w3-padding-large w3-margin-bottom">Sign In</button></a>
-        <a href="register.jsp"> <button class="w3-button w3-dark-gray w3-padding-large w3-margin-bottom">Register</button></a>
     </div>
-<c:import url="footer.jsp"/>
+
+    <c:import url="footer.jsp"/>
 </div>
 </body>
 </html>

@@ -13,13 +13,15 @@ import java.util.Objects;
 @Entity(name = "Role")
 @Table(name = "role") // case sensitive!
 public class Role {
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
 
     private String roleType;
-    private String email;
+
+     private String email;
 
     @ManyToOne
     @JoinColumn(name = "email",
@@ -37,10 +39,10 @@ public class Role {
      * Instantiates a new Role.
      *
      * @param roleType the role type
-     * @param email    email of the user
+     * @param email    the email
      * @param user     the user
      */
-    public Role(User user, String email, String roleType) {
+    public Role(String roleType, String email, User user) {
         this.roleType = roleType;
         this.email = email;
         this.user = user;
@@ -80,6 +82,24 @@ public class Role {
      */
     public void setRoleType(String roleType) {
         this.roleType = roleType;
+    }
+
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Sets email.
+     *
+     * @param email the email
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**

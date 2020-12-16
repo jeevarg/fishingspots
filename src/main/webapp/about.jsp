@@ -22,7 +22,7 @@
     <h4>
         Welcome to Fishing-Spots website! As a fishing enthusiast I am always on the look out for good fishing spots in
         and around my area. There are very few websites on the internet where you can look for spots but some of them are only
-        revealed to only registered users.
+        revealed to the registered users.
     </h4>
     <h4>
         Fishing-Spots lets you look for any / all spots without any sign-up. However, if you do sign-up, then you can

@@ -20,7 +20,6 @@
         <mapping class="com.fishingspots.entity.User"/>
         <mapping class="com.fishingspots.entity.Spot"/>
 
-
     </session-factory>
 
 </hibernate-configuration>
