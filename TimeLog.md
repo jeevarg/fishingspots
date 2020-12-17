@@ -95,4 +95,30 @@
 | 11/19/2020 to 11/22/2020| Implemented different features in the team project like w3.css styling in jsp pages, moved the API keys to a properties file, improvised on the service calling | 15 | |
 | | |  | |
 | WEEK 13 Activities| |  | |
-| 11/23/2020| Updated the TimeLog.md file and resumed working on the individual project | 4 | |
+| 11/23/2020| Resumed working on the indie project. Started implementing the google maps | 6 | |
+| 11/24/2020| Looked into resources on implementing the maps | 3 | |
+| 11/25/2020| Watched the videos on youtube related to google maps implementation | 4 | |
+| 11/26/2020| Implemented on displaying the spots on the JSP page | 4 | |
+| 11/27/2020| Worked on the Daos to carry the above functionality | 4 | |
+| 11/28/2020| Implemented the unit tests for the Daos | 4 | |
+| | |  | |
+| WEEK 14 Activities| |  | |
+| 11/29/2020| Started reading material and watching videos for week 13 exercise | 3 | |
+| 11/30/2020| Worked on week13 exercise, which was asynchronous messaging | 3 | |
+| 12/01/2020| Worked on implementing the listener class to also act as a producer | 4 | |
+| 12/02/2020| Finished week13 exercise, attended webex class | 4 | |
+| 12/03/2020 to 12/05/2020| Worked on Indie project, some JSP pages and W3.CSS styling | 10 | |
+| | |  | |
+| WEEK 15 Activities| |  | |
+| 12/06/2020 to 12/09/2020| Worked on showing the spots as markers on the map | 10 | |
+| 12/10/2020| Looked into youtube resources on implementing the InfoWindow on the google map api | 3 | |
+| 12/11/2020| Looked into google maps api documentation resources on implementing the InfoWindow on the google map api | 3 | |
+| 12/12/2020| Worked on implementing the InfoWindow functionality on the google map api | 3 | |
+| | |  | |
+| WEEK 16 Activities| |  | |
+| 12/13/2020| Worked on implementing the login and logout functionality | 3 | |
+| 12/14/2020| Worked on implementing the User Registration functionality | 3 | |
+| 12/15/2020| Finished implementing the W3.CSS styling for the above pages | 4 | |
+| 12/16/2020| Worked on performing the CRUD operations through UI | 4 | |
+| 12/17/2020| Updated the TimeLog.md file and added new screen shots for the actual designs | 1 | |
+

@@ -2,35 +2,35 @@
 
 ### Home Page
 
-![Home Page](1-home.png)
+![Home Page](proposed/1-home.png)
 
 ### Spots Page
 
-![Spots Page](2-spots.png)
+![Spots Page](proposed/2-spots.png)
 
 ### Add New Spot Page
 
-![Add New Spot](3-spotAdd.png)
+![Add New Spot](proposed/3-spotAdd.png)
 
 ### Edit Spot Page
 
-![Edit a Spot](4-spotEdit.png)
+![Edit a Spot](proposed/4-spotEdit.png)
 
 ### Delete Spot Page
 
-![Delete a Spot](5-spotDelete.png)
+![Delete a Spot](proposed/5-spotDelete.png)
 
 ### Dialog for Sign In
 
-![Sign in Dialog](6-signIn.png)
+![Sign in Dialog](proposed/6-signIn.png)
 
 ### Dialog for Sign Up
 
-![Sign up Dialog](7-signUp.png)
+![Sign up Dialog](proposed/7-signUp.png)
 
 ### About Page
 
-![About Page](8-about.png)
+![About Page](proposed/8-about.png)
 
 
 
